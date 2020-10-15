@@ -2,10 +2,23 @@
 
 <head>
     <title>Lorikeet</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
 </head>
 
 <body>
-    <h1>Welcome to Lorikeet</h1>
+    <div id="toolbar">
+        <div id="current-folder">
+            <script>
+                // 第一种方法
+                document.write(getUserHomeFolder());
+                // 第二种方法
+                // document.write(require('os').homedir());
+                // 第三种方法
+                // document.write(require('osenv').home());
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>

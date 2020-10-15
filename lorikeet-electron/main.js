@@ -11,7 +11,11 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow();
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     mainWindow.loadURL(`file://${app.getAppPath()}/index.html`);
     mainWindow.on('closed', () => { mainWindow = null; });
 });
