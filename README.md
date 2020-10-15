@@ -5,6 +5,8 @@ node.js;electron;javascript
 
 `npm install -g electron@^6.0.1`
 
+启动electron应用，进入对应的应用目录下：`electron .`
+
 ## hello-world-electron
 
 这个项目下有三个文件：
@@ -35,4 +37,11 @@ mainWindow.loadURL(`file://${__dirname}/index.html`);
 // 当应用关闭时，释放mainWindow变量对应用视窗的引用
 mainWindow.on('closed', ()=>{mainWindow = null;});
 ```
+
+## lorikeet-electron
+
+lorikeet是一款文件浏览器，它具备以下功能：
+
+- 用户浏览文件夹和查找文件
+- 用户可以使用默认的应用程序打开文件
 
