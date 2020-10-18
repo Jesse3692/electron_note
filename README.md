@@ -95,7 +95,22 @@ lorikeet是一款文件浏览器，它具备以下功能：
 
 *注意：这里的async模块，还需要在项目的根路径下再安装一次，不然程序会找不到async模块*
 
+`62576e1e8b3875548a59d33ea5231dd7d3047366`
 
 
 
+在应用中显示文件和文件夹：
 
+```js
+// 显示文件列表信息
+function displayFile(file) {
+    const mainArea = document.getElementById('main-area');
+    const template = document.querySelector('#item-template');
+    let clone = document.importNode(template.content, true);
+    clone.querySelector('img').src = `images/${file.type}.svg`;
+    clone.querySelector('.filename').innerText = file.file;
+    mainArea.appendChild(clone);
+}
+```
+
+![image-20201018113239981](https://i.loli.net/2020/10/18/hzVwBxYH1KZPTqL.png)
