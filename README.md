@@ -1,9 +1,17 @@
 # electron_note
 node.js;electron;javascript
 
-全局安装electron（最新的安装失败）
+全局安装electron
 
-`npm install -g electron@^6.0.1`
+首先配置npm源，然后配置electron源
+
+```ini
+registry=https://registry.npm.taobao.org
+# Electron Mirror of China
+ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
+```
+
+进行electron的安装`npm install -g electron`
 
 启动electron应用，进入对应的应用目录下：`electron .`
 
@@ -101,6 +109,8 @@ lorikeet是一款文件浏览器，它具备以下功能：
 
 在应用中显示文件和文件夹：
 
+`021c91cd442ab222d1522e7b110e37e2016154d5`
+
 ```js
 // 显示文件列表信息
 function displayFile(file) {
@@ -114,3 +124,15 @@ function displayFile(file) {
 ```
 
 ![image-20201018113239981](https://i.loli.net/2020/10/18/hzVwBxYH1KZPTqL.png)
+
+### 浏览文件夹
+
+#### 重构代码
+
+现在打开 `app.js`你会发现代码看起来有些混乱了，那么就该进行重构了，以免后面越来越难以维护。
+
+`app.js`的拆分：
+
+- `app.js`作为前端代码的主入口仍然保留。
+- `fileSystem.js`负责处理对用户计算机中的文件和文件夹进行操作
+- `userInterface.js`负责处理页面上的交互

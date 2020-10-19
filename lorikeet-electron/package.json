@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "main.js",
     "dependencies": {
+        "async": "^3.2.0",
         "aysnc": "0.0.1-security",
         "osenv": "^0.1.5"
     }
